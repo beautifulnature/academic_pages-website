@@ -1,0 +1,76 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.jboss</groupId>
+    <artifactId>jboss-parent</artifactId>
+    <version>37</version>
+    <relativePath/>
+  </parent>
+  
+  <groupId>edu.academic_pages</groupId>
+  <artifactId>academic_pages-website</artifactId>
+  <packaging>pom</packaging>
+  <version>999-SNAPSHOT</version>
+  
+  <name>Academic_Pages website</name>
+  <description>
+  	Academic_Pages website:
+  	This website is blog as well as notes for academic people.
+  	This module builds the website.
+  </description>
+  <url>https://www.beautifulnature.github.io</url>
+  <inceptionYear>2022</inceptionYear>
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  
+  <modules>
+    <module>academic_pages-website-docs</module>
+    <module>academic_pages-root</module>
+    <module>academic_pages-assembly</module>
+  </modules>
+  
+  <properties>
+    <maven_build_timestamp>${maven.build.timestamp}</maven_build_timestamp>
+    <!-- TODO: Upgrade with every product release. -->
+    <productDocsUrl>https://access.redhat.com/documentation/en-us/red_hat_process_automation_manager/7.11/html/developing_solvers_with_red_hat_build_of_optaplanner_in_red_hat_process_automation_manager</productDocsUrl>
+
+    <version.org.jbake>2.7.0-rc.6</version.org.jbake>
+  </properties>
+  
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>com.github.eirslett</groupId>
+          <artifactId>frontend-maven-plugin</artifactId>
+          <version>1.12.1</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-assembly-plugin</artifactId>
+          <version>3.3.0</version>
+        </plugin>
+        <plugin>
+          <groupId>org.jbake</groupId>
+          <artifactId>jbake-maven-plugin</artifactId>
+          <version>${version.org.jbake}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>exec-maven-plugin</artifactId>
+          <version>3.0.0</version>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>xml-maven-plugin</artifactId>
+          <version>1.0.2</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>

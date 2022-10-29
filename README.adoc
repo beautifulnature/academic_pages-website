@@ -1,0 +1,30 @@
+= AcademicPages
+
+https://www.beautifulnature.github.io/[www.beautifulnature.github.io]
+
+== Build the entire website
+
+To build the entire website with JBake and Antora (before and after your changes), run:
+
+----
+$ git clone git@github.com:beautifulnature/academic_pages-website.git
+$ cd academic_pages-website/
+$ mvn clean install
+$ firefox academic_pages-website-assembly/target/website-complete/index.html
+----
+
+This can take a minute.
+To speed that up, only build the `academic_pages-website-website-root` directory.
+
+== Edit the website
+
+Try making some changes in any of the key files:
+
+* *Use case landing pages*: `academic_pages-website-root/content/learn/useCases/` (AsciiDoc)
+* *Compatibility landing pages*: `academic_pages-website-root/content/compatibility/` (AsciiDoc)
+* *Front page*: `academic_pages-website-root/templates/index.ftl` (FreeMarker)
+* *Blog articles*: `academic_pages-website-root/content/blog/` (AsciiDoc)
+* *Users list*: `academic_pages-website-root/data/users.yml` (YAML)
+* *Videos list*: `academic_pages-website-root/data/videos.yml` (YAML)
+* *Events list*: `academic_pages-website-root/data/events.yml` (YAML)
+* *Base layout*: `academic_pages-website-root/templates/base.ftl` (FreeMarker)
